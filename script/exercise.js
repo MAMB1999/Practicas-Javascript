@@ -1,4 +1,4 @@
-export { fizzbuzz,anagrama };
+export { fizzbuzz, anagrama,Fibonacci};
 
 /*
  * Escribe un programa que muestre por consola (con un print) los
@@ -33,7 +33,7 @@ function fizzbuzz() {
  * - Dos palabras exactamente iguales no son anagrama.
  */
 function borrarEspacios(palabra) {
-    return palabra.replace(/\s+/g,'')
+    return palabra.replace(/\s+/g, '')
 }
 
 function anagrama(palabra1, palabra2) {
@@ -70,4 +70,23 @@ function anagrama(palabra1, palabra2) {
         return false
     }
 
+}
+
+/*
+ * Escribe un programa que imprima los 50 primeros números de la sucesión
+ * de Fibonacci empezando en 0.
+ * - La serie Fibonacci se compone por una sucesión de números en
+ *   la que el siguiente siempre es la suma de los dos anteriores.
+ *   0, 1, 1, 2, 3, 5, 8, 13...
+ */
+
+function Fibonacci() {
+    let value1 = 0, value2 = 1,sumfibo = 0, resultado = 0;
+    for (let i = 0; i < 50; i++) {
+        sumfibo = value1 + value2;
+        resultado = resultado + " " + sumfibo;
+        value1 = value2;
+        value2 = sumfibo;
+    }
+    return resultado
 }
